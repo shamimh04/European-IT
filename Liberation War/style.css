@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-header {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        url("./img/banner1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.page-header h1 {
+    font-size: 60px;
+}
+
+
+/* Document Cards */
+.doc-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.doc-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.doc-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.doc-body {
+    padding: 20px;
+}
+
+.doc-body span {
+    font-size: 14px;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.interviews-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.video-box {
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.interview-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.4s;
+    height: 100%;
+}
+
+.interview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.interview-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.interview-body h5 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.interview-body p {
+    font-size: 15px;
+    color: #555;
+}
+
+.photographs-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+
+
+.photographs-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.6s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.2);
+}
+
+/* Document Page */
+.document-header {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        url("./img/banner\ 2.webp");
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+
+/* Interviews Page */
+.interviews-page {
+    background: #f8f9fa;
+}
+
+.interview-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.4s;
+    height: 100%;
+}
+
+.interview-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive video */
+.interview-header {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        url("./img/banner3.jfif");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.video-box {
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.video-box iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.interview-body {
+    padding: 20px;
+}
+
+.interview-body h5 {
+    font-weight: 700;
+}
+
+.interview-body p {
+    font-size: 15px;
+    color: #555;
+}
+
+.bio {
+    margin-top: 10px;
+}
+
+.gallery-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('./img/banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.photo-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Page */
+.contact-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('./img/img3.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+

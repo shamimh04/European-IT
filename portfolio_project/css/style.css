@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+}
+h2 {
+  font-weight: 600;
+  text-shadow: 4px 1px 4px rgba(65, 65, 65, 0.5);
+  
+}
+h3 {
+  font-weight: 600;
+  text-shadow: 4px 1px 4px rgba(65, 65, 65, 0.5);
+  
+}
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url("../img/HomeBanner.jpg")
+    no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 140px 20px;
+  position: relative;
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+.hero-section h1{
+  text-shadow: 4px 1px 5px rgba(255,255,255,0.6);
+
+}
+.hero-section .btn {
+  border-radius: 50px;
+  padding: 10px 30px;
+}
+
+/* Introduction Section */
+.intro-section {
+  padding: 80px 20px;
+  background-color: white;
+}
+.intro-section img {
+  max-width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+  background-color: #e9ecef;
+  padding: 80px 20px;
+}
+.mission-vision h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Services Section */
+.services .card {
+  transition: transform 0.3s;
+  border-radius: 15px;
+  padding: 30px 20px;
+}
+.services .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Client Feedback Section */
+.clients-feedback {
+  padding: 80px 20px;
+  background-color: white;
+}
+.feedback-card {
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  background-color: #f8f9fa;
+}
+.feedback-card:hover {
+  transform: translateY(-5px);
+}
+.feedback-card img {
+  width: 60px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.about-section{
+    background: url("../img/aboutME.jpg") no-repeat center top;
+    background-size: cover;
+    width: 100%;
+    object-fit: cover;
+}
+.secvice-section{
+    background: url("../img/secviceBanner.jpg") no-repeat center top;
+    background-size: cover;
+    width: 100%;
+    object-fit: cover;
+}
+.portfolio-section{
+    background: url("../img/Portfolio.webp") no-repeat center top;
+    background-size: cover;
+    width: 100%;
+    object-fit: cover;
+}
+.contact-section{
+    background: url("../img/Contact.jpg") no-repeat center top;
+    background-size: cover;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Page Title Section */
+.page-title {
+  color: white;
+  text-align: center;
+  padding: 140px 20px;
+  position: relative;
+}
+.page-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  
+}
+.page-title h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+}
+.page-title h5 {
+  position: relative;
+  z-index: 1;
+  text-shadow: 4px 1px 10px rgba(0,0,0,0.6);
+}
+
+/* Service Grid Section */
+.services .card {
+  transition: transform 0.3s;
+}
+.services .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Client Section */
+.clients img {
+  max-height: 80px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.clients img:hover {
+  opacity: 1;
+}
+
+/* Contact Form */
+.contact-form .form-control {
+  border-radius: 8px;
+  padding: 12px;
+}
+.contact-form .btn {
+  border-radius: 8px;
+  padding: 10px 25px;
+}
+
+/* Footer */
+footer {
+  background: #343a40;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.animate-text {
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-title-section {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.project.py-5.bg-light .card-img-top {
+    width: 100%;         
+    height: 250px;       
+    object-fit: cover;    
+}
+@media (max-width: 768px) {
+    section.py-5.bg-light .card-img-top {
+        height: 200px;
+    }
+}
+
+/* ================= Page Title / Hero ================= */
+
+
+
+.contact-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= Contact Form & Info ================= */
+.contact-form input,
+.contact-form textarea {
+    border-radius: 0.5rem;
+    padding: 12px;
+}
+
+.contact-form button {
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+}
+
+/* Contact List */
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.contact-list li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.contact-list li a:hover {
+    color: #0d6efd;
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+    color: #0d6efd;
+    margin-right: 10px;
+}
+
+/* Social Icons */
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 12px;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0d6efd;
+    transform: translateY(-3px);
+}
+
+/* Map Responsive */
+.map-responsive {
+    overflow: hidden;
+    padding-top: 10px;
+}
