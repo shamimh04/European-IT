@@ -1,148 +1,297 @@
-<!DOCTYPE html><html><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>AgriHub - Contact Agricultural Expert</title>
-  </head><body><nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">AgriHub</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#nav">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link"
-                href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="guides.html">Farming
-                Guides</a></li>
-            <li class="nav-item"><a class="nav-link" href="crops.html">Crop
-                Details</a></li>
-            <li class="nav-item"><a class="nav-link" href="pests.html">Pest
-                Control</a></li>
-            <li class="nav-item"><a class="nav-link active"
-                href="contact.html">Contact</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="guides.html">Farming Guides</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="crops.html">Crop Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pests.html">Pest Control</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container py-5">
-  <div class="row g-4">
+      <div class="row g-4">
+        <!-- LEFT : Contact Form -->
+        <div class="col-md-6">
+          <h2>Contact Agricultural Expert</h2>
 
-    <!-- LEFT : Contact Form -->
-    <div class="col-md-6">
-      <h2>Contact Agricultural Expert</h2>
+          <form class="mt-4" id="contactForm">
+            <div class="mb-3">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" />
+              <small class="text-danger d-none" id="nameError"
+                >Name is required</small
+              >
+            </div>
 
-      <form class="mt-4">
-        <div class="mb-3">
-          <label class="form-label">Your Name</label>
-          <input type="text" class="form-control">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" />
+              <small class="text-danger d-none" id="emailError"
+                >Enter a valid email</small
+              >
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Your Message</label>
+              <textarea rows="4" class="form-control" id="message"></textarea>
+              <small class="text-danger d-none" id="messageError"
+                >Message is required</small
+              >
+            </div>
+
+            <button class="btn btn-success" type="submit">Send Message</button>
+          </form>
         </div>
 
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control">
+        <!-- RIGHT : Company Info -->
+        <div
+          class="col-md-6 d-flex flex-column align-items-lg-center justify-content-center"
+        >
+          <h2>Our Office</h2>
+
+          <p class="mt-3 mb-1"><strong>Location:</strong></p>
+          <p>Dhaka, Bangladesh</p>
+
+          <p class="mb-1"><strong>Email:</strong></p>
+          <p>
+            <a href="mailto:agrihub@gmail.com" class="text-decoration-none">
+              agrihub@gmail.com
+            </a>
+          </p>
+
+          <p class="mb-1"><strong>Phone:</strong></p>
+          <p>+880 1234 567890</p>
+
+          <!-- Social Icons -->
+          <div class="mt-4">
+            <h6>Follow Us</h6>
+            <a href="#" class="me-3 fs-4 text-success">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="me-3 fs-4 text-success">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="fs-4 text-success">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
-
-        <div class="mb-3">
-          <label class="form-label">Your Message</label>
-          <textarea rows="4" class="form-control"></textarea>
-        </div>
-
-        <button class="btn btn-success">Send Message</button>
-      </form>
-    </div>
-
-    <!-- RIGHT : Company Info -->
-    <div class="col-md-6 d-flex flex-column align-items-lg-center justify-content-center">
-      <h2>Our Office</h2>
-
-      <p class="mt-3 mb-1"><strong>Location:</strong></p>
-      <p>Dhaka, Bangladesh</p>
-
-      <p class="mb-1"><strong>Email:</strong></p>
-      <p>
-        <a href="mailto:agrihub@gmail.com"
-          class="text-decoration-none">
-          agrihub@gmail.com
-        </a>
-      </p>
-
-      <p class="mb-1"><strong>Phone:</strong></p>
-      <p>+880 1234 567890</p>
-
-      <!-- Social Icons -->
-      <div class="mt-4">
-        <h6>Follow Us</h6>
-        <a href="#" class="me-3 fs-4 text-success">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="#" class="me-3 fs-4 text-success">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="fs-4 text-success">
-          <i class="fab fa-instagram"></i>
-        </a>
       </div>
     </div>
-
-  </div>
-</div>
-
 
     <section class="footer-info bg-dark text-light py-5 border-top">
       <div class="container">
         <div class="row g-4">
           <div class="col-md-4">
             <h5 class="fw-bold text-success">AgriHub</h5>
-            <p class="small mb-0">Practical guidance on sustainable farming,
-              crop management and pest control.</p>
+            <p class="small mb-0">
+              Practical guidance on sustainable farming, crop management and
+              pest control.
+            </p>
           </div>
           <div class="col-md-4">
             <h6 class="fw-bold text-success">Quick Links</h6>
             <ul class="list-unstyled small mb-0">
-              <li><a href="index.html"
-                  class="text-decoration-none text-light">Home</a></li>
-              <li><a href="guides.html"
-                  class="text-decoration-none text-light">Farming
-                  Guides</a></li>
-              <li><a href="crops.html"
-                  class="text-decoration-none text-light">Crop Details</a></li>
-              <li><a href="pests.html"
-                  class="text-decoration-none text-light">Pest Control</a></li>
-              <li><a href="contact.html"
-                  class="text-decoration-none text-light">Contact</a></li>
+              <li>
+                <a href="index.html" class="text-decoration-none text-light"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="guides.html" class="text-decoration-none text-light"
+                  >Farming Guides</a
+                >
+              </li>
+              <li>
+                <a href="crops.html" class="text-decoration-none text-light"
+                  >Crop Details</a
+                >
+              </li>
+              <li>
+                <a href="pests.html" class="text-decoration-none text-light"
+                  >Pest Control</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="text-decoration-none text-light"
+                  >Contact</a
+                >
+              </li>
             </ul>
           </div>
           <div class="col-md-4">
             <h6 class="fw-bold text-success">Contact & Newsletter</h6>
-            <p class="small mb-2">Email: <a href="mailto:agrihub@gmail.com"
-                class="text-decoration-none">agrihub@gmail.com</a></p>
+            <p class="small mb-2">
+              Email:
+              <a href="mailto:agrihub@gmail.com" class="text-decoration-none"
+                >agrihub@gmail.com</a
+              >
+            </p>
             <form class="d-flex">
-              <input type="email" class="form-control me-2"
-                placeholder="Your email" aria-label="Email" required>
+              <input
+                type="email"
+                class="form-control me-2"
+                placeholder="Your email"
+                aria-label="Email"
+                required
+              />
               <button class="btn btn-success" type="submit">Subscribe</button>
             </form>
             <div class="mt-3">
-              <a href="#" class="me-2 text-light text-decoration-none fs-5"
-                aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="me-2 text-light text-decoration-none fs-5"
-                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="text-light text-decoration-none fs-5"
-                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a
+                href="#"
+                class="me-2 text-light text-decoration-none fs-5"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="me-2 text-light text-decoration-none fs-5"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="text-light text-decoration-none fs-5"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <footer class="bg-secondary py-2 ">
+    <footer class="bg-dark text-light py-2">
       <div class="container text-center">
-        <p class="mb-1">&copy; 2025 Agricultural Information Hub</p>
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <span>© 2025 Agricultural Information Hub</span>
+          <span class="small" id="dateTime"></span>
+        </div>
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script></body></html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const form = document.getElementById("contactForm");
+
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
+
+      const nameError = document.getElementById("nameError");
+      const emailError = document.getElementById("emailError");
+      const messageError = document.getElementById("messageError");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+
+        // Name validation
+        if (nameInput.value.trim() === "") {
+          setError(nameInput, nameError);
+          isValid = false;
+        } else {
+          clearError(nameInput, nameError);
+        }
+
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+          setError(emailInput, emailError);
+          isValid = false;
+        } else {
+          clearError(emailInput, emailError);
+        }
+
+        // Message validation
+        if (messageInput.value.trim() === "") {
+          setError(messageInput, messageError);
+          isValid = false;
+        } else {
+          clearError(messageInput, messageError);
+        }
+
+        if (isValid) {
+          form.reset();
+        }
+      });
+
+      // Error  function
+      function setError(input, errorMsg) {
+        input.classList.add("is-invalid");
+        errorMsg.classList.remove("d-none");
+      }
+
+      // Error remove function
+      function clearError(input, errorMsg) {
+        input.classList.remove("is-invalid");
+        errorMsg.classList.add("d-none");
+      }
+
+      function updateDateTime() {
+        const now = new Date();
+
+        const options = {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        };
+
+        document.getElementById("dateTime").innerText = now.toLocaleString(
+          "en-US",
+          options
+        );
+      }
+
+      // first load
+      updateDateTime();
+
+      //  update
+      setInterval(updateDateTime, 1000);
+    </script>
+  </body>
+</html>

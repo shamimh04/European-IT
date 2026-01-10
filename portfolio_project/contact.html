@@ -67,23 +67,40 @@
         <div class="col-md-6">
           <div class="card shadow-sm p-4">
             <h2 class="mb-4">Send a Message</h2>
-            <form class="contact-form">
+            <form class="contact-form" id="contactForm">
               <input
                 type="text"
-                class="form-control mb-3"
+                class="form-control mb-1"
                 placeholder="Your Name"
+                id="name"
               />
+              <small class="text-danger d-none mb-2" id="nameError">
+                Name is required
+              </small>
+
               <input
                 type="email"
-                class="form-control mb-3"
+                class="form-control mb-1"
                 placeholder="Your Email"
+                id="email"
               />
+              <small class="text-danger d-none mb-2" id="emailError">
+                Enter a valid email
+              </small>
+
               <textarea
-                class="form-control mb-3"
+                class="form-control mb-1"
                 rows="5"
                 placeholder="Your Message"
+                id="message"
               ></textarea>
-              <button class="btn btn-primary w-100">Send Message</button>
+              <small class="text-danger d-none mb-2" id="messageError">
+                Message is required
+              </small>
+
+              <button class="btn btn-primary w-100" type="submit">
+                Send Message
+              </button>
             </form>
           </div>
         </div>
@@ -207,12 +224,105 @@
 
         <hr class="bg-white mt-4" />
 
-        <div class="text-center pb-3">
-          &copy; 2025 Shamim Hossain. All Rights Reserved.
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <span>© 2025 Shamim Hossain. All Rights Reserved.</span>
+          <span class="small" id="dateTime"></span>
         </div>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      const form = document.getElementById("contactForm");
+
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
+
+      const nameError = document.getElementById("nameError");
+      const emailError = document.getElementById("emailError");
+      const messageError = document.getElementById("messageError");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+
+        // Name
+        if (nameInput.value.trim() === "") {
+          showError(nameInput, nameError);
+          isValid = false;
+        } else {
+          hideError(nameInput, nameError);
+        }
+
+        // Email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+          showError(emailInput, emailError);
+          isValid = false;
+        } else {
+          hideError(emailInput, emailError);
+        }
+
+        // Message
+        if (messageInput.value.trim() === "") {
+          showError(messageInput, messageError);
+          isValid = false;
+        } else {
+          hideError(messageInput, messageError);
+        }
+
+        if (isValid) {
+          form.reset();
+        }
+      });
+
+      function showError(input, error) {
+        input.classList.add("is-invalid");
+        error.classList.remove("d-none");
+      }
+
+      function hideError(input, error) {
+        input.classList.remove("is-invalid");
+        error.classList.add("d-none");
+      }
+
+      // typing  error remove
+      [nameInput, emailInput, messageInput].forEach((input) => {
+        input.addEventListener("input", () => {
+          input.classList.remove("is-invalid");
+          document.getElementById(input.id + "Error").classList.add("d-none");
+        });
+      });
+      
+      // Date and Time Update
+      function updateDateTime() {
+        const now = new Date();
+
+        const options = {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        };
+
+        document.getElementById("dateTime").innerText = now.toLocaleString(
+          "en-US",
+          options
+        );
+      }
+
+      // first load
+      updateDateTime();
+
+      //  update
+      setInterval(updateDateTime, 1000);
+    </script>
   </body>
 </html>

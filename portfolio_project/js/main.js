@@ -54,3 +54,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+
+      // Date and Time Update
+      function updateDateTime() {
+        const now = new Date();
+
+        const options = {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        };
+
+        document.getElementById("dateTime").innerText = now.toLocaleString(
+          "en-US",
+          options
+        );
+      }
+
+      // first load
+      updateDateTime();
+
+      //  update
+      setInterval(updateDateTime, 1000);
