@@ -1,206 +1,459 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liberation War Gallery</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Liberation War Archive</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
-                    <li class="nav-item"><a class="nav-link" href="interviews.html">Interviews</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Liberation War Archive</a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="documents.html">Documents</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="interviews.html">Interviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <header class="gallery-header">
-        <div class="container text-center">
-            <h1>Liberation War Gallery</h1>
-            <p>Rare photographs capturing key moments, people, and events from 1971</p>
-        </div>
+      <div class="container text-center">
+        <h1>Liberation War Gallery</h1>
+        <p>
+          Rare photographs capturing key moments, people, and events from 1971
+        </p>
+      </div>
     </header>
 
     <section class="container my-5">
+      <div class="text-center mb-4">
+        <button class="btn btn-outline-dark me-2 filter-btn" data-filter="all">
+          All
+        </button>
+        <button
+          class="btn btn-outline-dark me-2 filter-btn"
+          data-filter="events"
+        >
+          Events
+        </button>
+        <button
+          class="btn btn-outline-dark me-2 filter-btn"
+          data-filter="locations"
+        >
+          Locations
+        </button>
+        <button class="btn btn-outline-dark filter-btn" data-filter="people">
+          People
+        </button>
+      </div>
 
-
-        <div class="row g-4" id="gallery">
-            <div class="text-center mt-5">
-                <h2>Photographs Gallery</h2>
-                <p>Rare photographs capturing key moments, people, and events from 1971</p>
-            </div>
-            <div class="col-md-4 gallery-item">
-                <div class="photo-card shadow">
-                    <img src="./img/gallery 1.jpg" alt="Historic Moment" data-title="Historic Moment"
-                        data-download="./img/gallery 1.jpg">
-                    <div class="card-body text-center mt-3 pb-2">
-                        <h5 class="card-title">Historic Moment</h5>
-                        <p class="card-text small text-muted">Captured moment from the Liberation War battlefields.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gallery-item">
-                <div class="photo-card shadow">
-                    <img src="./img/gallery2.jpg" alt="Historic Moment" data-title="Historic Moment"
-                        data-download="./img/gallery2.jpg">
-                    <div class="card-body text-center mt-3 pb-2">
-                        <h5 class="card-title">Historic Moment</h5>
-                        <p class="card-text small text-muted">Captured moment from the Liberation War battlefields.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gallery-item">
-                <div class="photo-card shadow">
-                    <img src="./img/gallery3.jpg" alt="Historic Moment" data-title="Historic Moment"
-                        data-download="./img/gallery3.jpg">
-                    <div class="card-body text-center mt-3 pb-2">
-                        <h5 class="card-title">Historic Moment</h5>
-                        <p class="card-text small text-muted">Captured moment from the Liberation War battlefields.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gallery-item">
-                <div class="photo-card shadow">
-                    <img src="./img/img 2.jpg" alt="Historic Moment" data-title="Historic Moment"
-                        data-download="./img/img 2.jpg">
-                    <div class="card-body text-center mt-3 pb-2">
-                        <h5 class="card-title">Historic Moment</h5>
-                        <p class="card-text small text-muted">Captured moment from the Liberation War battlefields.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gallery-item">
-                <div class="photo-card shadow">
-                    <img src="./img/images1.jfif" alt="Historic Moment" data-title="Historic Moment"
-                        data-download="./img/images1.jfif">
-                    <div class="card-body text-center mt-3 pb-2">
-                        <h5 class="card-title">Historic Moment</h5>
-                        <p class="card-text small text-muted">Captured moment from the Liberation War battlefields.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gallery-item">
-                <div class="photo-card shadow">
-                    <img src="./img/img3.jpg" alt="Historic Moment" data-title="Historic Moment"
-                        data-download="./img/img3.jpg">
-                    <div class="card-body text-center mt-3 pb-2">
-                        <h5 class="card-title">Historic Moment</h5>
-                        <p class="card-text small text-muted">Captured moment from the Liberation War battlefields.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="row g-4" id="gallery">
+        <div class="text-center mt-5">
+          <h2>Photographs Gallery</h2>
+          <p>
+            Rare photographs capturing key moments, people, and events from 1971
+          </p>
         </div>
+        <!-- EVENTS -->
+        <div class="col-md-4 gallery-item" data-category="events">
+          <div class="photo-card shadow">
+            <img
+              src="./img/gallery 1.jpg"
+              alt="Battle Event"
+              data-download="./img/gallery 1.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">Battlefield Event</h5>
+              <p class="card-text small text-muted">
+                Key battle event during Liberation War.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="events">
+          <div class="photo-card shadow">
+            <img
+              src="./img/gallery2.jpg"
+              alt="War Protest"
+              data-download="./img/gallery2.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">War Protest</h5>
+              <p class="card-text small text-muted">
+                Mass protest against oppression.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="events">
+          <div class="photo-card shadow">
+            <img
+              src="./img/img3.jpg"
+              alt="Victory Day"
+              data-download="./img/img3.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">Victory Moment</h5>
+              <p class="card-text small text-muted">
+                Celebration after victory.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PEOPLE -->
+        <div class="col-md-4 gallery-item" data-category="people">
+          <div class="photo-card shadow">
+            <img
+              src="./img/gallery3.jpg"
+              alt="Freedom Fighter"
+              data-download="./img/gallery3.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">Freedom Fighter</h5>
+              <p class="card-text small text-muted">
+                Portrait of a brave freedom fighter.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="people">
+          <div class="photo-card shadow">
+            <img
+              src="./img/images1.jfif"
+              alt="War Survivor"
+              data-download="./img/images1.jfif"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">War Survivor</h5>
+              <p class="card-text small text-muted">
+                People affected by the war.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="people">
+          <div class="photo-card shadow">
+            <img
+              src="./img/gallery 1.jpg"
+              alt="Local Heroes"
+              data-download="./img/gallery 1.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">Local Heroes</h5>
+              <p class="card-text small text-muted">Unsung heroes of 1971.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOCATIONS -->
+        <div class="col-md-4 gallery-item" data-category="locations">
+          <div class="photo-card shadow">
+            <img
+              src="./img/img 2.jpg"
+              alt="Historic Place"
+              data-download="./img/img 2.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">Historic Location</h5>
+              <p class="card-text small text-muted">
+                Important place from the war.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="locations">
+          <div class="photo-card shadow">
+            <img
+              src="./img/gallery2.jpg"
+              alt="Destroyed Area"
+              data-download="./img/gallery2.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">War Affected Area</h5>
+              <p class="card-text small text-muted">
+                Location damaged during conflict.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="locations">
+          <div class="photo-card shadow">
+            <img
+              src="./img/gallery3.jpg"
+              alt="Refugee Camp"
+              data-download="./img/gallery3.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">Refugee Camp</h5>
+              <p class="card-text small text-muted">
+                Temporary shelters during war.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="events">
+          <div class="photo-card shadow">
+            <img
+              src="./img/images1.jfif"
+              alt="Military March"
+              data-download="./img/images1.jfif"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">Military March</h5>
+              <p class="card-text small text-muted">
+                Troops preparing for battle.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="people">
+          <div class="photo-card shadow">
+            <img
+              src="./img/img 2.jpg"
+              alt="War Children"
+              data-download="./img/img 2.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">War Children</h5>
+              <p class="card-text small text-muted">
+                Children affected by war.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 gallery-item" data-category="locations">
+          <div class="photo-card shadow">
+            <img
+              src="./img/img3.jpg"
+              alt="Liberated Area"
+              data-download="./img/img3.jpg"
+            />
+            <div class="card-body text-center mt-3 pb-2">
+              <h5 class="card-title">Liberated Area</h5>
+              <p class="card-text small text-muted">Area after liberation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-transparent border-0">
-                <div class="modal-body text-center position-relative">
-                    <img src="" id="galleryModalImage" class="img-fluid" alt=""> <br>
-                    <a id="galleryDownloadBtn" href="#" download class="btn btn-primary mt-3">Download</a>
-                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-            </div>
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-transparent border-0">
+          <div class="modal-body text-center position-relative">
+            <img src="" id="galleryModalImage" class="img-fluid" alt="" />
+            <br />
+            <a
+              id="galleryDownloadBtn"
+              href="#"
+              download
+              class="btn btn-primary mt-3"
+              >Download</a
+            >
+            <button
+              type="button"
+              class="btn-close position-absolute top-0 end-0 m-3"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
         </div>
+      </div>
     </div>
 
-
-
-
-
-
-   <section class="footer-info bg-dark text-light py-5 border-top">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h5 class="fw-bold text-white">Liberation War Archive</h5>
-                    <p class="small mb-0">Official declaration issued on 26 March 1971.</p>
-                </div>
-                <div class="col-md-4">
-                    <h6 class="fw-bold text-white">Quick Links</h6>
-                    <ul class="list-unstyled small mb-0">
-                        <li><a href="index.html" class="text-decoration-none text-light">Home</a></li>
-                        <li><a href="documents.html" class="text-decoration-none text-light">Documents</a></li>
-                        <li><a href="interviews.html" class="text-decoration-none text-light">Interviews Details</a></li>
-                        <li><a href="gallery.html" class="text-decoration-none text-light">Gallery</a></li>
-                        <li><a href="contact.html" class="text-decoration-none text-light">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h6 class="fw-bold text-white">Contact & Newsletter</h6>
-                    <p class="small mb-2">Email: <a href="mailto:agrihub@gmail.com"
-                            class="text-decoration-none">liberation@gmail.com</a></p>
-                    <form class="d-flex">
-                        <input type="email" class="form-control me-2" placeholder="Your email" aria-label="Email"
-                            required>
-                        <button class="btn btn-light" type="submit">Subscribe</button>
-                    </form>
-                    <div class="mt-3">
-                        <a href="#" class="me-2 text-light text-decoration-none fs-5" aria-label="Twitter"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-2 text-light text-decoration-none fs-5" aria-label="Facebook"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-light text-decoration-none fs-5" aria-label="Instagram"><i
-                                class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+    <section class="footer-info bg-dark text-light py-5 border-top">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5 class="fw-bold text-white">Liberation War Archive</h5>
+            <p class="small mb-0">
+              Official declaration issued on 26 March 1971.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h6 class="fw-bold text-white">Quick Links</h6>
+            <ul class="list-unstyled small mb-0">
+              <li>
+                <a href="index.html" class="text-decoration-none text-light"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="documents.html" class="text-decoration-none text-light"
+                  >Documents</a
+                >
+              </li>
+              <li>
+                <a
+                  href="interviews.html"
+                  class="text-decoration-none text-light"
+                  >Interviews Details</a
+                >
+              </li>
+              <li>
+                <a href="gallery.html" class="text-decoration-none text-light"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="text-decoration-none text-light"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h6 class="fw-bold text-white">Contact & Newsletter</h6>
+            <p class="small mb-2">
+              Email:
+              <a href="mailto:agrihub@gmail.com" class="text-decoration-none"
+                >liberation@gmail.com</a
+              >
+            </p>
+            <form class="d-flex">
+              <input
+                type="email"
+                class="form-control me-2"
+                placeholder="Your email"
+                aria-label="Email"
+                required
+              />
+              <button class="btn btn-light" type="submit">Subscribe</button>
+            </form>
+            <div class="mt-3">
+              <a
+                href="#"
+                class="me-2 text-light text-decoration-none fs-5"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="me-2 text-light text-decoration-none fs-5"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="text-light text-decoration-none fs-5"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
- <footer class="bg-dark text-light py-2">
+    <footer class="bg-dark text-light py-2">
       <div class="container text-center">
-        <div class="container d-flex justify-content-between align-items-center">
-        <span>© 2025 Liberation War Archive</span>
-        <span class="small" id="dateTime"></span>
-      </div>
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <span>© 2025 Liberation War Archive</span>
+          <span class="small" id="dateTime"></span>
+        </div>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script
-      function updateDateTime() {
-        const now = new Date();
 
-        const options = {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        };
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryImages = document.querySelectorAll(".photo-card img");
+        const modalImage = document.getElementById("galleryModalImage");
+        const downloadBtn = document.getElementById("galleryDownloadBtn");
+        const modalElement = document.getElementById("galleryModal");
 
-        document.getElementById("dateTime").innerText = now.toLocaleString(
-          "en-US",
-          options
-        );
-      }
+        galleryImages.forEach((img) => {
+          img.addEventListener("click", () => {
+            modalImage.src = img.src;
+            downloadBtn.href = img.getAttribute("data-download");
 
-      // first load
-      updateDateTime();
+            const modal = new bootstrap.Modal(modalElement);
+            modal.show();
+          });
+        });
 
-      setInterval(updateDateTime, 1000);</script>
+        // ===== Category Filter =====
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
 
-</body>
+        filterButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const filter = btn.getAttribute("data-filter");
 
+            galleryItems.forEach((item) => {
+              if (
+                filter === "all" ||
+                item.getAttribute("data-category") === filter
+              ) {
+                item.style.display = "block";
+              } else {
+                item.style.display = "none";
+              }
+            });
+          });
+        });
+
+        // ===== Add category labels on each photo =====
+        const categoryNames = { events: "Events", people: "People", locations: "Locations" };
+        galleryItems.forEach((item) => {
+          const cat = item.getAttribute("data-category");
+          const display = categoryNames[cat] || cat || "";
+          if (display) {
+            const label = document.createElement("div");
+            label.className = "category-label";
+            label.textContent = display;
+            const photoCard = item.querySelector('.photo-card');
+            if (photoCard) photoCard.appendChild(label);
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

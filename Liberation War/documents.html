@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -27,7 +27,7 @@
         <a class="navbar-brand" href="index.html">Liberation War Archive</a>
         <button
           class="navbar-toggler"
-          data-bs-toggle="collapse"
+            
           data-bs-target="#menu"
         >
           <span class="navbar-toggler-icon"></span>
@@ -65,11 +65,42 @@
     <!-- DOCUMENTS SECTION -->
     <section class="documents-section py-5">
       <div class="container">
-        <h2 class="text-center fw-bold mb-4">Historical Documents</h2>
+        <h2 class="text-center fw-bold mb-4">Historical Documents Catalog</h2>
         <p class="text-center mb-5">
           A curated collection of official documents related to the Liberation
-          War of Bangladesh
+          War of Bangladesh, including treaties, declarations, and official
+          correspondence. Documents are categorized by type, date, and
+          relevance.
         </p>
+
+        <!-- Search and Sort -->
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control"
+              placeholder="Search documents by title or description..."
+            />
+          </div>
+          <div class="col-md-3">
+            <select id="sortSelect" class="form-select">
+              <option value="default">Sort by: Default</option>
+              <option value="date-asc">Date: Oldest First</option>
+              <option value="date-desc">Date: Newest First</option>
+              <option value="relevance-high">Relevance: High to Low</option>
+              <option value="relevance-low">Relevance: Low to High</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <input
+              type="date"
+              id="dateFilter"
+              class="form-control"
+              placeholder="Filter by date"
+            />
+          </div>
+        </div>
 
         <!-- Filter Buttons -->
         <div class="text-center mb-4">
@@ -97,13 +128,27 @@
           >
             Record
           </button>
+          <button
+            class="btn btn-outline-primary me-2 filter-btn"
+            data-filter="treaty"
+          >
+            Treaty
+          </button>
         </div>
 
         <!-- Documents Grid -->
-        <div class="row g-4">
+        <div class="row g-4" id="documentsGrid">
           <!-- Document 1 -->
-          <div class="col-md-4 col-sm-6 doc-item declaration">
-            <div class="doc-card shadow">
+          <div
+            class="col-md-4 col-sm-6 doc-item declaration"
+            data-date="1971-03-26"
+            data-relevance="high"
+          >
+            <div
+              class="doc-card shadow"
+              data-bs-toggle="modal"
+              data-bs-target="#docModal1"
+            >
               <img
                 src="./img/gallery 1.jpg"
                 alt="Declaration of Independence"
@@ -115,22 +160,45 @@
                   The official declaration issued on 26 March 1971, marking the
                   beginning of Bangladesh’s struggle for freedom.
                 </p>
+                <div class="doc-meta">
+                  <p class="mb-1"><strong>Type:</strong> Declaration</p>
+                  <p class="mb-1"><strong>Date:</strong> 1971-03-26</p>
+                  <p class="mb-1"><strong>Relevance:</strong> High</p>
+                </div>
+
                 <!-- Collapse trigger -->
                 <span
                   class="badge bg-primary text-white"
-                  data-bs-toggle="collapse"
+                    
                   href="#collapse1"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapse1"
                 >
-                  Declaration
+                  View Details
                 </span>
                 <!-- Collapse content -->
                 <div class="collapse mt-2" id="collapse1">
                   <div class="card card-body">
-                    Detailed information about this declaration. You can put
-                    paragraphs, images, or links here.
+                    <h6>Description:</h6>
+                    <p>
+                      This document is the Proclamation of Independence of
+                      Bangladesh, read out by Sheikh Mujibur Rahman on 26 March
+                      1971. It declared Bangladesh as an independent and
+                      sovereign state, outlining the reasons for secession from
+                      Pakistan due to political and economic oppression.
+                    </p>
+                    <h6>Publication Date:</h6>
+                    <p>26 March 1971</p>
+                    <h6>Source Information:</h6>
+                    <p>
+                      Archived by the Bangladesh Government Archives. Original
+                      broadcast via radio and published in newspapers.
+                      Reference: Mujibnagar Government Records.
+                    </p>
+                    <a href="#" class="btn btn-sm btn-outline-primary"
+                      >Download PDF</a
+                    >
                   </div>
                 </div>
               </div>
@@ -138,30 +206,61 @@
           </div>
 
           <!-- Document 2 -->
-          <div class="col-md-4 col-sm-6 doc-item correspondence">
-            <div class="doc-card shadow">
+          <div
+            class="col-md-4 col-sm-6 doc-item correspondence"
+            data-date="1971-04-10"
+            data-relevance="medium"
+          >
+            <div
+              class="doc-card shadow"
+              data-bs-toggle="modal"
+              data-bs-target="#docModal2"
+            >
               <img
                 src="./img/images1.jfif"
                 alt="Official Correspondence"
                 class="img-fluid"
               />
               <div class="doc-body mt-2">
-                <h5>Official Correspondence</h5>
-                <p>Letters and communications from 1971.</p>
+                <h5>Letter from Sheikh Mujibur Rahman</h5>
+                <p>
+                  Correspondence addressed to international leaders seeking
+                  support for the liberation movement.
+                </p>
+                <div class="doc-meta">
+                  <p class="mb-1"><strong>Type:</strong> Declaration</p>
+                  <p class="mb-1"><strong>Date:</strong> 1971-03-26</p>
+                  <p class="mb-1"><strong>Relevance:</strong> High</p>
+                </div>
                 <span
                   class="badge bg-primary text-white"
-                  data-bs-toggle="collapse"
+                    
                   href="#collapse2"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapse2"
                 >
-                  Correspondence
+                  View Details
                 </span>
                 <div class="collapse mt-2" id="collapse2">
                   <div class="card card-body">
-                    Detailed information about this correspondence. You can put
-                    paragraphs, images, or links here.
+                    <h6>Description:</h6>
+                    <p>
+                      This letter was sent by Sheikh Mujibur Rahman to various
+                      world leaders, including the UN Secretary-General,
+                      appealing for recognition and aid during the early stages
+                      of the war.
+                    </p>
+                    <h6>Publication Date:</h6>
+                    <p>10 April 1971</p>
+                    <h6>Source Information:</h6>
+                    <p>
+                      Preserved in the National Archives of Bangladesh. Copies
+                      available in international diplomatic records.
+                    </p>
+                    <a href="#" class="btn btn-sm btn-outline-primary"
+                      >Download PDF</a
+                    >
                   </div>
                 </div>
               </div>
@@ -169,30 +268,61 @@
           </div>
 
           <!-- Document 3 -->
-          <div class="col-md-4 col-sm-6 doc-item record">
-            <div class="doc-card shadow">
+          <div
+            class="col-md-4 col-sm-6 doc-item record"
+            data-date="1971-12-16"
+            data-relevance="high"
+          >
+            <div
+              class="doc-card shadow"
+              data-bs-toggle="modal"
+              data-bs-target="#docModal3"
+            >
               <img
                 src="./img/gallery3.jpg"
                 alt="Historical Record"
                 class="img-fluid"
               />
               <div class="doc-body mt-2">
-                <h5>Historical Record</h5>
-                <p>Official records and archival materials.</p>
+                <h5>Instrument of Surrender</h5>
+                <p>
+                  Official record of the Pakistani military's surrender, ending
+                  the war.
+                </p>
+                <div class="doc-meta">
+                  <p class="mb-1"><strong>Type:</strong> Declaration</p>
+                  <p class="mb-1"><strong>Date:</strong> 1971-03-26</p>
+                  <p class="mb-1"><strong>Relevance:</strong> High</p>
+                </div>
+
                 <span
                   class="badge bg-primary text-white"
-                  data-bs-toggle="collapse"
+                    
                   href="#collapse3"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapse3"
                 >
-                  Record
+                  View Details
                 </span>
                 <div class="collapse mt-2" id="collapse3">
                   <div class="card card-body">
-                    Detailed information about this record. You can put
-                    paragraphs, images, or links here.
+                    <h6>Description:</h6>
+                    <p>
+                      The Instrument of Surrender was signed by Lieutenant
+                      General A.A.K. Niazi on behalf of Pakistan, marking the
+                      formal end of hostilities and the creation of Bangladesh.
+                    </p>
+                    <h6>Publication Date:</h6>
+                    <p>16 December 1971</p>
+                    <h6>Source Information:</h6>
+                    <p>
+                      Official document held by the Bangladesh Liberation War
+                      Museum and international archives.
+                    </p>
+                    <a href="#" class="btn btn-sm btn-outline-primary"
+                      >Download PDF</a
+                    >
                   </div>
                 </div>
               </div>
@@ -200,29 +330,55 @@
           </div>
 
           <!-- Document 4 -->
-          <div class="col-md-4 col-sm-6 doc-item declaration">
-            <div class="doc-card shadow">
-              <img
-                src="./img/banner1.jpg"
-                alt="Declaration"
-                class="img-fluid"
-              />
+          <div
+            class="col-md-4 col-sm-6 doc-item treaty"
+            data-date="1972-03-19"
+            data-relevance="high"
+          >
+            <div
+              class="doc-card shadow"
+              data-bs-toggle="modal"
+              data-bs-target="#docModal4"
+            >
+              <img src="./img/banner1.jpg" alt="Treaty" class="img-fluid" />
               <div class="doc-body mt-2">
-                <h5>Declaration Document</h5>
-                <p>Another official declaration from 1971.</p>
+                <h5>Simla Agreement</h5>
+                <p>Treaty between India and Pakistan post-liberation war.</p>
+                <div class="doc-meta">
+                  <p class="mb-1"><strong>Type:</strong> Declaration</p>
+                  <p class="mb-1"><strong>Date:</strong> 1971-03-26</p>
+                  <p class="mb-1"><strong>Relevance:</strong> High</p>
+                </div>
+
                 <span
                   class="badge bg-primary text-white"
-                  data-bs-toggle="collapse"
+                    
                   href="#collapse4"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapse4"
                 >
-                  Declaration
+                  View Details
                 </span>
                 <div class="collapse mt-2" id="collapse4">
                   <div class="card card-body">
-                    Detailed information about this declaration.
+                    <h6>Description:</h6>
+                    <p>
+                      The Simla Agreement aimed to normalize relations between
+                      India and Pakistan after the 1971 war, addressing the
+                      return of prisoners and the establishment of diplomatic
+                      ties.
+                    </p>
+                    <h6>Publication Date:</h6>
+                    <p>19 March 1972</p>
+                    <h6>Source Information:</h6>
+                    <p>
+                      Archived by the Ministry of External Affairs, India, and
+                      Pakistan's Foreign Office.
+                    </p>
+                    <a href="#" class="btn btn-sm btn-outline-primary"
+                      >Download PDF</a
+                    >
                   </div>
                 </div>
               </div>
@@ -230,29 +386,61 @@
           </div>
 
           <!-- Document 5 -->
-          <div class="col-md-4 col-sm-6 doc-item correspondence">
-            <div class="doc-card shadow">
+          <div
+            class="col-md-4 col-sm-6 doc-item correspondence"
+            data-date="1971-07-15"
+            data-relevance="medium"
+          >
+            <div
+              class="doc-card shadow"
+              data-bs-toggle="modal"
+              data-bs-target="#docModal5"
+            >
               <img
                 src="./img/gallery3.jpg"
                 alt="Correspondence"
                 class="img-fluid"
               />
               <div class="doc-body mt-2">
-                <h5>Letter Correspondence</h5>
-                <p>Official letters from 1971.</p>
+                <h5>Diplomatic Note to the UN</h5>
+                <p>
+                  Official correspondence to the United Nations regarding the
+                  conflict.
+                </p>
+                <div class="doc-meta">
+                  <p class="mb-1"><strong>Type:</strong> Declaration</p>
+                  <p class="mb-1"><strong>Date:</strong> 1971-03-26</p>
+                  <p class="mb-1"><strong>Relevance:</strong> High</p>
+                </div>
+
                 <span
                   class="badge bg-primary text-white"
-                  data-bs-toggle="collapse"
+                    
                   href="#collapse5"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapse5"
                 >
-                  Correspondence
+                  View Details
                 </span>
                 <div class="collapse mt-2" id="collapse5">
                   <div class="card card-body">
-                    Detailed information about this correspondence.
+                    <h6>Description:</h6>
+                    <p>
+                      This note was submitted to the UN Security Council by the
+                      Bangladesh government-in-exile, detailing atrocities and
+                      seeking intervention.
+                    </p>
+                    <h6>Publication Date:</h6>
+                    <p>15 July 1971</p>
+                    <h6>Source Information:</h6>
+                    <p>
+                      UN Archives, New York. Also available in Bangladesh's
+                      diplomatic records.
+                    </p>
+                    <a href="#" class="btn btn-sm btn-outline-primary"
+                      >Download PDF</a
+                    >
                   </div>
                 </div>
               </div>
@@ -260,30 +448,60 @@
           </div>
 
           <!-- Document 6 -->
-          <div class="col-md-4 col-sm-6 doc-item record">
-            <div class="doc-card shadow">
+          <div
+            class="col-md-4 col-sm-6 doc-item record"
+            data-date="1971-11-21"
+            data-relevance="high"
+          >
+            <div
+              class="doc-card shadow"
+              data-bs-toggle="modal"
+              data-bs-target="#docModal6"
+            >
               <img src="./img/gallery2.jpg" alt="Record" class="img-fluid" />
               <div class="doc-body mt-2">
-                <h5>Official Record</h5>
-                <p>Archival record from 1971.</p>
+                <h5>Recognition by Bhutan</h5>
+                <p>Official record of Bangladesh's recognition by Bhutan.</p>
+                <div class="doc-meta">
+                  <p class="mb-1"><strong>Type:</strong> Declaration</p>
+                  <p class="mb-1"><strong>Date:</strong> 1971-03-26</p>
+                  <p class="mb-1"><strong>Relevance:</strong> High</p>
+                </div>
+
                 <span
                   class="badge bg-primary text-white"
-                  data-bs-toggle="collapse"
+                    
                   href="#collapse6"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapse6"
                 >
-                  Record
+                  View Details
                 </span>
                 <div class="collapse mt-2" id="collapse6">
                   <div class="card card-body">
-                    Detailed information about this record.
+                    <h6>Description:</h6>
+                    <p>
+                      Bhutan became the first country to recognize Bangladesh as
+                      an independent nation, a significant diplomatic milestone.
+                    </p>
+                    <h6>Publication Date:</h6>
+                    <p>21 November 1971</p>
+                    <h6>Source Information:</h6>
+                    <p>
+                      Bhutanese Royal Archives and Bangladesh Ministry of
+                      Foreign Affairs.
+                    </p>
+                    <a href="#" class="btn btn-sm btn-outline-primary"
+                      >Download PDF</a
+                    >
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Add more documents as needed to expand the catalog -->
         </div>
       </div>
     </section>
@@ -362,13 +580,14 @@
         </div>
       </div>
     </section>
-
-  <footer class="bg-dark text-light py-2">
+    <footer class="bg-dark text-light py-2">
       <div class="container text-center">
-        <div class="container d-flex justify-content-between align-items-center">
-        <span>© 2025 Liberation War Archive</span>
-        <span class="small" id="dateTime"></span>
-      </div>
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <span>© 2025 Liberation War Archive</span>
+          <span class="small" id="dateTime"></span>
+        </div>
       </div>
     </footer>
 
@@ -377,28 +596,117 @@
     <script>
       const filterButtons = document.querySelectorAll(".filter-btn");
       const docItems = document.querySelectorAll(".doc-item");
+      const searchInput = document.getElementById("searchInput");
+      const sortSelect = document.getElementById("sortSelect");
+      const dateFilter = document.getElementById("dateFilter");
 
+      let activeType = "all";
+
+      // 🔹 TYPE FILTER
       filterButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
-          const filter = btn.dataset.filter;
+          activeType = btn.dataset.filter;
 
-          docItems.forEach((item) => {
-            if (filter === "all") {
-              item.style.display = "block";
-            } else {
-              if (item.classList.contains(filter)) {
-                item.style.display = "block";
-              } else {
-                item.style.display = "none";
-              }
-            }
-          });
-
-          // Active button styling
           filterButtons.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
+
+          applyFilters();
         });
       });
+
+      // 🔹 SEARCH
+      searchInput.addEventListener("input", applyFilters);
+
+      // 🔹 DATE FILTER
+      dateFilter.addEventListener("change", applyFilters);
+
+      // 🔹 SORT
+      sortSelect.addEventListener("change", applyFilters);
+
+      function applyFilters() {
+        let itemsArray = Array.from(docItems);
+
+        itemsArray.forEach((item) => {
+          const title = item.querySelector("h5").innerText.toLowerCase();
+          const desc = item.querySelector("p").innerText.toLowerCase();
+          const searchValue = searchInput.value.toLowerCase();
+
+          const itemDate = item.dataset.date;
+          const selectedDate = dateFilter.value;
+
+          let visible = true;
+
+          // TYPE
+          if (activeType !== "all" && !item.classList.contains(activeType)) {
+            visible = false;
+          }
+
+          // SEARCH
+          if (
+            searchValue &&
+            !title.includes(searchValue) &&
+            !desc.includes(searchValue)
+          ) {
+            visible = false;
+          }
+
+          // DATE
+          if (selectedDate && itemDate !== selectedDate) {
+            visible = false;
+          }
+
+          item.style.display = visible ? "block" : "none";
+        });
+
+        // SORT
+        sortItems(itemsArray);
+      }
+
+      function sortItems(items) {
+        const grid = document.getElementById("documentsGrid");
+        const sortValue = sortSelect.value;
+
+        let sortedItems = [...items];
+
+        if (sortValue === "date-asc") {
+          sortedItems.sort(
+            (a, b) => new Date(a.dataset.date) - new Date(b.dataset.date),
+          );
+        }
+
+        if (sortValue === "date-desc") {
+          sortedItems.sort(
+            (a, b) => new Date(b.dataset.date) - new Date(a.dataset.date),
+          );
+        }
+
+        if (sortValue === "relevance-high") {
+          const order = { high: 1, medium: 2, low: 3 };
+          sortedItems.sort(
+            (a, b) => order[a.dataset.relevance] - order[b.dataset.relevance],
+          );
+        }
+
+        if (sortValue === "relevance-low") {
+          const order = { low: 1, medium: 2, high: 3 };
+          sortedItems.sort(
+            (a, b) => order[a.dataset.relevance] - order[b.dataset.relevance],
+          );
+        }
+
+        sortedItems.forEach((item) => grid.appendChild(item));
+      }
+
+      // 🔹 DATE TIME
+      function updateDateTime() {
+        const now = new Date();
+        document.getElementById("dateTime").innerText =
+          now.toLocaleString("en-US");
+      }
+
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+
       function updateDateTime() {
         const now = new Date();
 
@@ -413,7 +721,7 @@
 
         document.getElementById("dateTime").innerText = now.toLocaleString(
           "en-US",
-          options
+          options,
         );
       }
 
@@ -422,5 +730,169 @@
 
       setInterval(updateDateTime, 1000);
     </script>
+    <!-- DOCUMENT MODAL -->
+
+    <div class="modal fade" id="docModal1" tabindex="-1">
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Declaration of Independence</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <img src="./img/gallery 1.jpg" class="w-100 h-75 mb-3" />
+
+            <p>
+              This is the full historical background of the Declaration of
+              Independence. Sheikh Mujibur Rahman proclaimed independence on 26
+              March 1971, which marked the beginning of the Liberation War of
+              Bangladesh.
+            </p>
+
+            <ul>
+              <li><strong>Date:</strong> 26 March 1971</li>
+              <li><strong>Type:</strong> Declaration</li>
+              <li><strong>Source:</strong> Government Archives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="docModal2" tabindex="-1">
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Letter from Sheikh Mujibur Rahman</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <img src="./img/images1.jfif" class="w-100 h-75 mb-3" />
+            <p>
+              These letters were written to international leaders requesting
+              diplomatic recognition and humanitarian assistance during the
+              early phase of the Liberation War.
+            </p>
+            <ul>
+              <li><strong>Date:</strong> 10 April 1971</li>
+              <li><strong>Type:</strong> Correspondence</li>
+              <li><strong>Source:</strong> National Archives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="docModal3" tabindex="-1">
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Instrument of Surrender</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <img src="./img/gallery3.jpg" class="w-100 h-75 mb-3" />
+            <p>
+              Signed on 16 December 1971 by Lieutenant General A. A. K. Niazi,
+              this document officially ended the Liberation War and confirmed
+              the independence of Bangladesh.
+            </p>
+            <ul>
+              <li><strong>Date:</strong> 16 December 1971</li>
+              <li><strong>Type:</strong> Record</li>
+              <li><strong>Source:</strong> Liberation War Museum</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="docModal4" tabindex="-1">
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Simla Agreement</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <img src="./img/banner1.jpg" class="w-100 h-75 mb-3" />
+            <p>
+              The Simla Agreement was signed between India and Pakistan in 1972
+              to normalize relations after the 1971 war and address prisoner
+              exchanges and border issues.
+            </p>
+            <ul>
+              <li><strong>Date:</strong> 19 March 1972</li>
+              <li><strong>Type:</strong> Treaty</li>
+              <li><strong>Source:</strong> Foreign Ministry Archives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="docModal5" tabindex="-1">
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Diplomatic Note to the United Nations</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <img src="./img/gallery3.jpg" class="w-100 h-75 mb-3" />
+            <p>
+              This diplomatic note detailed war atrocities and was submitted to
+              the UN Security Council by the Bangladesh government-in-exile to
+              seek international intervention.
+            </p>
+            <ul>
+              <li><strong>Date:</strong> 15 July 1971</li>
+              <li><strong>Type:</strong> Correspondence</li>
+              <li><strong>Source:</strong> UN Archives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="docModal6" tabindex="-1">
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Recognition by Bhutan</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <img src="./img/gallery2.jpg" class="w-100 h-75 mb-3" />
+            <p>
+              Bhutan became the first country to officially recognize Bangladesh
+              as an independent nation on 21 November 1971, a major diplomatic
+              victory.
+            </p>
+            <ul>
+              <li><strong>Date:</strong> 21 November 1971</li>
+              <li><strong>Type:</strong> Record</li>
+              <li><strong>Source:</strong> Bhutan Royal Archives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -59,6 +59,50 @@ a {
     font-weight: bold;
 }
 
+.doc-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.doc-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-body p {
+  font-size: 14px;
+}
+
+.doc-meta {
+  font-size: 13px;
+  color: #555;
+}
+
+/* View details button always bottom */
+.doc-body .badge,
+.doc-body .view-details {
+  margin-top: auto;
+}
+
+.doc-card {
+  border-radius: 8px;
+}
+
+.doc-card:hover {
+  transform: translateY(-4px);
+  transition: 0.3s;
+}
+
+
+/* Interview section */
+
 .interviews-section {
     padding: 80px 0;
     background: #f8f9fa;
@@ -151,6 +195,35 @@ a {
 .photo-card:hover img {
     transform: scale(1.2);
 }
+
+
+.photo-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Category label shown over each photo */
+.category-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    z-index: 2;
+}
+
+@media (max-width: 576px) {
+    .category-label { font-size: 12px; padding: 5px 8px; }
+}
+
+
 
 /* Document Page */
 .document-header {
